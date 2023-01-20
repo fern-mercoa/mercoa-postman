@@ -1,0 +1,819 @@
+{
+  "info": {
+    "name": "api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://www.mercoa.com/api",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ],
+    "type": "bearer"
+  },
+  "item": [
+    {
+      "name": "Counterparty",
+      "item": [
+        {
+          "name": "find",
+          "request": {
+            "description": "Find counterparties",
+            "url": {
+              "raw": "{{baseUrl}}/entity/{entityId}/counterparties?query=&paymentMethods=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                "{entityId}",
+                "counterparties"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "",
+                  "description": "Search term"
+                },
+                {
+                  "key": "paymentMethods",
+                  "value": "",
+                  "description": "include payment method information in response"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Entity",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "description": "Get all entities",
+            "url": {
+              "raw": "{{baseUrl}}/entities",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entities"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "create",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/entity",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\",\n    \"accountType\": \"example\",\n    \"name\": \"example\",\n    \"email\": \"example\",\n    \"profile\": {\n        \"business\": {\n            \"email\": \"example\",\n            \"phone\": {\n                \"countryCode\": \"example\",\n                \"number\": \"example\"\n            },\n            \"businessType\": \"example\",\n            \"legalBusinessName\": \"example\",\n            \"doingBusinessAs\": \"example\",\n            \"website\": \"example\",\n            \"ownersProvided\": true,\n            \"taxId\": {\n                \"ein\": \"example\"\n            },\n            \"address\": {\n                \"addressLine1\": \"example\",\n                \"addressLine2\": \"example\",\n                \"city\": \"example\",\n                \"stateOrProvince\": \"example\",\n                \"postalCode\": \"example\",\n                \"country\": \"example\"\n            }\n        },\n        \"individual\": {\n            \"email\": \"example\",\n            \"phone\": {\n                \"countryCode\": \"example\",\n                \"number\": \"example\"\n            },\n            \"name\": {\n                \"firstName\": \"example\",\n                \"middleName\": \"example\",\n                \"lastName\": \"example\",\n                \"suffix\": \"example\"\n            },\n            \"birthdate\": {\n                \"day\": 0,\n                \"month\": 0,\n                \"year\": 0\n            },\n            \"address\": {\n                \"addressLine1\": \"example\",\n                \"addressLine2\": \"example\",\n                \"city\": \"example\",\n                \"stateOrProvince\": \"example\",\n                \"postalCode\": \"example\",\n                \"country\": \"example\"\n            }\n        }\n    },\n    \"moovStatus\": \"example\",\n    \"ownersProvided\": true,\n    \"accpetedMoovTos\": true,\n    \"createdAt\": \"example\",\n    \"updatedAt\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Get entity",
+            "url": {
+              "raw": "{{baseUrl}}/entity/:entityId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                ":entityId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "update",
+          "request": {
+            "description": "Update entity",
+            "url": {
+              "raw": "{{baseUrl}}/entity/:entityId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                ":entityId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\",\n    \"accountType\": \"example\",\n    \"name\": \"example\",\n    \"email\": \"example\",\n    \"profile\": {\n        \"business\": {\n            \"email\": \"example\",\n            \"phone\": {\n                \"countryCode\": \"example\",\n                \"number\": \"example\"\n            },\n            \"businessType\": \"example\",\n            \"legalBusinessName\": \"example\",\n            \"doingBusinessAs\": \"example\",\n            \"website\": \"example\",\n            \"ownersProvided\": true,\n            \"taxId\": {\n                \"ein\": \"example\"\n            },\n            \"address\": {\n                \"addressLine1\": \"example\",\n                \"addressLine2\": \"example\",\n                \"city\": \"example\",\n                \"stateOrProvince\": \"example\",\n                \"postalCode\": \"example\",\n                \"country\": \"example\"\n            }\n        },\n        \"individual\": {\n            \"email\": \"example\",\n            \"phone\": {\n                \"countryCode\": \"example\",\n                \"number\": \"example\"\n            },\n            \"name\": {\n                \"firstName\": \"example\",\n                \"middleName\": \"example\",\n                \"lastName\": \"example\",\n                \"suffix\": \"example\"\n            },\n            \"birthdate\": {\n                \"day\": 0,\n                \"month\": 0,\n                \"year\": 0\n            },\n            \"address\": {\n                \"addressLine1\": \"example\",\n                \"addressLine2\": \"example\",\n                \"city\": \"example\",\n                \"stateOrProvince\": \"example\",\n                \"postalCode\": \"example\",\n                \"country\": \"example\"\n            }\n        }\n    },\n    \"moovStatus\": \"example\",\n    \"ownersProvided\": true,\n    \"accpetedMoovTos\": true,\n    \"createdAt\": \"example\",\n    \"updatedAt\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Delete entity",
+            "url": {
+              "raw": "{{baseUrl}}/entity/:entityId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                ":entityId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "acceptTermsOfService",
+          "request": {
+            "description": "End user accepts Terms of Service",
+            "url": {
+              "raw": "{{baseUrl}}/entity/:entityId/accept-tos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                ":entityId",
+                "accept-tos"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST"
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Invoice",
+      "item": [
+        {
+          "name": "getInvoices",
+          "request": {
+            "description": "Get invoices for an entity",
+            "url": {
+              "raw": "{{baseUrl}}/entity/:entityId/invoices",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                ":entityId",
+                "invoices"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "getToken",
+          "request": {
+            "description": "Get JWT token for entity",
+            "url": {
+              "raw": "{{baseUrl}}/entity/:entityId/token",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                ":entityId",
+                "token"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "create",
+          "request": {
+            "description": "Create invoice",
+            "url": {
+              "raw": "{{baseUrl}}/invoice",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\",\n    \"status\": \"example\",\n    \"amount\": 0,\n    \"currency\": \"example\",\n    \"dueDate\": \"example\",\n    \"invoiceNumber\": \"example\",\n    \"noteToSelf\": \"example\",\n    \"createdAt\": \"example\",\n    \"updatedAt\": \"example\",\n    \"vendorId\": \"example\",\n    \"vendor\": {\n        \"id\": \"example\",\n        \"accountType\": \"example\",\n        \"name\": \"example\",\n        \"email\": \"example\",\n        \"profile\": {\n            \"business\": {\n                \"email\": \"example\",\n                \"phone\": {\n                    \"countryCode\": \"example\",\n                    \"number\": \"example\"\n                },\n                \"businessType\": \"example\",\n                \"legalBusinessName\": \"example\",\n                \"doingBusinessAs\": \"example\",\n                \"website\": \"example\",\n                \"ownersProvided\": true,\n                \"taxId\": {\n                    \"ein\": \"example\"\n                },\n                \"address\": {\n                    \"addressLine1\": \"example\",\n                    \"addressLine2\": \"example\",\n                    \"city\": \"example\",\n                    \"stateOrProvince\": \"example\",\n                    \"postalCode\": \"example\",\n                    \"country\": \"example\"\n                }\n            },\n            \"individual\": {\n                \"email\": \"example\",\n                \"phone\": {\n                    \"countryCode\": \"example\",\n                    \"number\": \"example\"\n                },\n                \"name\": {\n                    \"firstName\": \"example\",\n                    \"middleName\": \"example\",\n                    \"lastName\": \"example\",\n                    \"suffix\": \"example\"\n                },\n                \"birthdate\": {\n                    \"day\": 0,\n                    \"month\": 0,\n                    \"year\": 0\n                },\n                \"address\": {\n                    \"addressLine1\": \"example\",\n                    \"addressLine2\": \"example\",\n                    \"city\": \"example\",\n                    \"stateOrProvince\": \"example\",\n                    \"postalCode\": \"example\",\n                    \"country\": \"example\"\n                }\n            }\n        },\n        \"moovStatus\": \"example\",\n        \"ownersProvided\": true,\n        \"accpetedMoovTos\": true,\n        \"createdAt\": \"example\",\n        \"updatedAt\": \"example\"\n    },\n    \"payerId\": \"example\",\n    \"payer\": {\n        \"id\": \"example\",\n        \"accountType\": \"example\",\n        \"name\": \"example\",\n        \"email\": \"example\",\n        \"profile\": {\n            \"business\": {\n                \"email\": \"example\",\n                \"phone\": {\n                    \"countryCode\": \"example\",\n                    \"number\": \"example\"\n                },\n                \"businessType\": \"example\",\n                \"legalBusinessName\": \"example\",\n                \"doingBusinessAs\": \"example\",\n                \"website\": \"example\",\n                \"ownersProvided\": true,\n                \"taxId\": {\n                    \"ein\": \"example\"\n                },\n                \"address\": {\n                    \"addressLine1\": \"example\",\n                    \"addressLine2\": \"example\",\n                    \"city\": \"example\",\n                    \"stateOrProvince\": \"example\",\n                    \"postalCode\": \"example\",\n                    \"country\": \"example\"\n                }\n            },\n            \"individual\": {\n                \"email\": \"example\",\n                \"phone\": {\n                    \"countryCode\": \"example\",\n                    \"number\": \"example\"\n                },\n                \"name\": {\n                    \"firstName\": \"example\",\n                    \"middleName\": \"example\",\n                    \"lastName\": \"example\",\n                    \"suffix\": \"example\"\n                },\n                \"birthdate\": {\n                    \"day\": 0,\n                    \"month\": 0,\n                    \"year\": 0\n                },\n                \"address\": {\n                    \"addressLine1\": \"example\",\n                    \"addressLine2\": \"example\",\n                    \"city\": \"example\",\n                    \"stateOrProvince\": \"example\",\n                    \"postalCode\": \"example\",\n                    \"country\": \"example\"\n                }\n            }\n        },\n        \"moovStatus\": \"example\",\n        \"ownersProvided\": true,\n        \"accpetedMoovTos\": true,\n        \"createdAt\": \"example\",\n        \"updatedAt\": \"example\"\n    },\n    \"paymentSource\": {\n        \"id\": \"example\",\n        \"type\": \"example\",\n        \"bankAccount\": {\n            \"id\": \"example\",\n            \"bankName\": \"example\",\n            \"accountName\": \"example\",\n            \"routingNumber\": \"example\",\n            \"accountNumber\": \"example\",\n            \"accountType\": \"example\",\n            \"moovStatus\": \"example\"\n        },\n        \"check\": {\n            \"id\": \"example\",\n            \"payToTheOrderOf\": \"example\",\n            \"addressLine1\": \"example\",\n            \"addressLine2\": \"example\",\n            \"city\": \"example\",\n            \"stateOrProvince\": \"example\",\n            \"postalCode\": \"example\",\n            \"country\": \"example\"\n        }\n    },\n    \"paymentSourceId\": \"example\",\n    \"paymentDestination\": {\n        \"id\": \"example\",\n        \"type\": \"example\",\n        \"bankAccount\": {\n            \"id\": \"example\",\n            \"bankName\": \"example\",\n            \"accountName\": \"example\",\n            \"routingNumber\": \"example\",\n            \"accountNumber\": \"example\",\n            \"accountType\": \"example\",\n            \"moovStatus\": \"example\"\n        },\n        \"check\": {\n            \"id\": \"example\",\n            \"payToTheOrderOf\": \"example\",\n            \"addressLine1\": \"example\",\n            \"addressLine2\": \"example\",\n            \"city\": \"example\",\n            \"stateOrProvince\": \"example\",\n            \"postalCode\": \"example\",\n            \"country\": \"example\"\n        }\n    },\n    \"paymentDestinationId\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Get invoice",
+            "url": {
+              "raw": "{{baseUrl}}/invoice/:invoiceId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice",
+                ":invoiceId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "invoiceId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "update",
+          "request": {
+            "description": "Update invoice",
+            "url": {
+              "raw": "{{baseUrl}}/invoice/:invoiceId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice",
+                ":invoiceId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "invoiceId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\",\n    \"status\": \"example\",\n    \"amount\": 0,\n    \"currency\": \"example\",\n    \"dueDate\": \"example\",\n    \"invoiceNumber\": \"example\",\n    \"noteToSelf\": \"example\",\n    \"createdAt\": \"example\",\n    \"updatedAt\": \"example\",\n    \"vendorId\": \"example\",\n    \"vendor\": {\n        \"id\": \"example\",\n        \"accountType\": \"example\",\n        \"name\": \"example\",\n        \"email\": \"example\",\n        \"profile\": {\n            \"business\": {\n                \"email\": \"example\",\n                \"phone\": {\n                    \"countryCode\": \"example\",\n                    \"number\": \"example\"\n                },\n                \"businessType\": \"example\",\n                \"legalBusinessName\": \"example\",\n                \"doingBusinessAs\": \"example\",\n                \"website\": \"example\",\n                \"ownersProvided\": true,\n                \"taxId\": {\n                    \"ein\": \"example\"\n                },\n                \"address\": {\n                    \"addressLine1\": \"example\",\n                    \"addressLine2\": \"example\",\n                    \"city\": \"example\",\n                    \"stateOrProvince\": \"example\",\n                    \"postalCode\": \"example\",\n                    \"country\": \"example\"\n                }\n            },\n            \"individual\": {\n                \"email\": \"example\",\n                \"phone\": {\n                    \"countryCode\": \"example\",\n                    \"number\": \"example\"\n                },\n                \"name\": {\n                    \"firstName\": \"example\",\n                    \"middleName\": \"example\",\n                    \"lastName\": \"example\",\n                    \"suffix\": \"example\"\n                },\n                \"birthdate\": {\n                    \"day\": 0,\n                    \"month\": 0,\n                    \"year\": 0\n                },\n                \"address\": {\n                    \"addressLine1\": \"example\",\n                    \"addressLine2\": \"example\",\n                    \"city\": \"example\",\n                    \"stateOrProvince\": \"example\",\n                    \"postalCode\": \"example\",\n                    \"country\": \"example\"\n                }\n            }\n        },\n        \"moovStatus\": \"example\",\n        \"ownersProvided\": true,\n        \"accpetedMoovTos\": true,\n        \"createdAt\": \"example\",\n        \"updatedAt\": \"example\"\n    },\n    \"payerId\": \"example\",\n    \"payer\": {\n        \"id\": \"example\",\n        \"accountType\": \"example\",\n        \"name\": \"example\",\n        \"email\": \"example\",\n        \"profile\": {\n            \"business\": {\n                \"email\": \"example\",\n                \"phone\": {\n                    \"countryCode\": \"example\",\n                    \"number\": \"example\"\n                },\n                \"businessType\": \"example\",\n                \"legalBusinessName\": \"example\",\n                \"doingBusinessAs\": \"example\",\n                \"website\": \"example\",\n                \"ownersProvided\": true,\n                \"taxId\": {\n                    \"ein\": \"example\"\n                },\n                \"address\": {\n                    \"addressLine1\": \"example\",\n                    \"addressLine2\": \"example\",\n                    \"city\": \"example\",\n                    \"stateOrProvince\": \"example\",\n                    \"postalCode\": \"example\",\n                    \"country\": \"example\"\n                }\n            },\n            \"individual\": {\n                \"email\": \"example\",\n                \"phone\": {\n                    \"countryCode\": \"example\",\n                    \"number\": \"example\"\n                },\n                \"name\": {\n                    \"firstName\": \"example\",\n                    \"middleName\": \"example\",\n                    \"lastName\": \"example\",\n                    \"suffix\": \"example\"\n                },\n                \"birthdate\": {\n                    \"day\": 0,\n                    \"month\": 0,\n                    \"year\": 0\n                },\n                \"address\": {\n                    \"addressLine1\": \"example\",\n                    \"addressLine2\": \"example\",\n                    \"city\": \"example\",\n                    \"stateOrProvince\": \"example\",\n                    \"postalCode\": \"example\",\n                    \"country\": \"example\"\n                }\n            }\n        },\n        \"moovStatus\": \"example\",\n        \"ownersProvided\": true,\n        \"accpetedMoovTos\": true,\n        \"createdAt\": \"example\",\n        \"updatedAt\": \"example\"\n    },\n    \"paymentSource\": {\n        \"id\": \"example\",\n        \"type\": \"example\",\n        \"bankAccount\": {\n            \"id\": \"example\",\n            \"bankName\": \"example\",\n            \"accountName\": \"example\",\n            \"routingNumber\": \"example\",\n            \"accountNumber\": \"example\",\n            \"accountType\": \"example\",\n            \"moovStatus\": \"example\"\n        },\n        \"check\": {\n            \"id\": \"example\",\n            \"payToTheOrderOf\": \"example\",\n            \"addressLine1\": \"example\",\n            \"addressLine2\": \"example\",\n            \"city\": \"example\",\n            \"stateOrProvince\": \"example\",\n            \"postalCode\": \"example\",\n            \"country\": \"example\"\n        }\n    },\n    \"paymentSourceId\": \"example\",\n    \"paymentDestination\": {\n        \"id\": \"example\",\n        \"type\": \"example\",\n        \"bankAccount\": {\n            \"id\": \"example\",\n            \"bankName\": \"example\",\n            \"accountName\": \"example\",\n            \"routingNumber\": \"example\",\n            \"accountNumber\": \"example\",\n            \"accountType\": \"example\",\n            \"moovStatus\": \"example\"\n        },\n        \"check\": {\n            \"id\": \"example\",\n            \"payToTheOrderOf\": \"example\",\n            \"addressLine1\": \"example\",\n            \"addressLine2\": \"example\",\n            \"city\": \"example\",\n            \"stateOrProvince\": \"example\",\n            \"postalCode\": \"example\",\n            \"country\": \"example\"\n        }\n    },\n    \"paymentDestinationId\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Delete invoice",
+            "url": {
+              "raw": "{{baseUrl}}/invoice/:invoiceId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice",
+                ":invoiceId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "invoiceId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "getVendorLink",
+          "request": {
+            "description": "Get temporary link for vendor to accept payment",
+            "url": {
+              "raw": "{{baseUrl}}/invoice/:invoiceId/vendorlink",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice",
+                ":invoiceId",
+                "vendorlink"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "invoiceId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Payment Method",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "url": {
+              "raw": "{{baseUrl}}/entity/{entityId}/paymentMethods?type=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                "{entityId}",
+                "paymentMethods"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "",
+                  "description": "Type of payment method to filter"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "create",
+          "request": {
+            "description": "Create payment method",
+            "url": {
+              "raw": "{{baseUrl}}/entity/{entityId}/paymentMethod",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                "{entityId}",
+                "paymentMethod"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\",\n    \"type\": \"example\",\n    \"bankAccount\": {\n        \"id\": \"example\",\n        \"bankName\": \"example\",\n        \"accountName\": \"example\",\n        \"routingNumber\": \"example\",\n        \"accountNumber\": \"example\",\n        \"accountType\": \"example\",\n        \"moovStatus\": \"example\"\n    },\n    \"check\": {\n        \"id\": \"example\",\n        \"payToTheOrderOf\": \"example\",\n        \"addressLine1\": \"example\",\n        \"addressLine2\": \"example\",\n        \"city\": \"example\",\n        \"stateOrProvince\": \"example\",\n        \"postalCode\": \"example\",\n        \"country\": \"example\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Get payment method",
+            "url": {
+              "raw": "{{baseUrl}}/entity/{entityId}/paymentMethod/:paymentMethodId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                "{entityId}",
+                "paymentMethod",
+                ":paymentMethodId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                },
+                {
+                  "key": "paymentMethodId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Delete payment method",
+            "url": {
+              "raw": "{{baseUrl}}/entity/{entityId}/paymentMethod/:paymentMethodId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                "{entityId}",
+                "paymentMethod",
+                ":paymentMethodId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                },
+                {
+                  "key": "paymentMethodId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "initiateMicroDeposits",
+          "request": {
+            "description": "Initiate micro deposits for a bank account",
+            "url": {
+              "raw": "{{baseUrl}}/entity/{entityId}/paymentMethod/:paymentMethodId/micro-deposits",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                "{entityId}",
+                "paymentMethod",
+                ":paymentMethodId",
+                "micro-deposits"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                },
+                {
+                  "key": "paymentMethodId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "completeMicroDeposits",
+          "request": {
+            "description": "Complete micro deposit verification",
+            "url": {
+              "raw": "{{baseUrl}}/entity/{entityId}/paymentMethod/:paymentMethodId/micro-deposits",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "entity",
+                "{entityId}",
+                "paymentMethod",
+                ":paymentMethodId",
+                "micro-deposits"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                },
+                {
+                  "key": "paymentMethodId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"amounts\": [\n        0\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Representative",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "description": "Get representatives for an entity",
+            "url": {
+              "raw": "{{baseUrl}}/api/entity/{entityId}/representatives",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "entity",
+                "{entityId}",
+                "representatives"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "create",
+          "request": {
+            "description": "Create representative",
+            "url": {
+              "raw": "{{baseUrl}}/api/entity/{entityId}/representative",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "entity",
+                "{entityId}",
+                "representative"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\",\n    \"name\": {\n        \"firstName\": \"example\",\n        \"middleName\": \"example\",\n        \"lastName\": \"example\",\n        \"suffix\": \"example\"\n    },\n    \"phone\": {\n        \"countryCode\": \"example\",\n        \"number\": \"example\"\n    },\n    \"email\": \"example\",\n    \"address\": {\n        \"addressLine1\": \"example\",\n        \"addressLine2\": \"example\",\n        \"city\": \"example\",\n        \"stateOrProvince\": \"example\",\n        \"postalCode\": \"example\",\n        \"country\": \"example\"\n    },\n    \"birthDateProvided\": true,\n    \"governmentIDProvided\": true,\n    \"birthDate\": {\n        \"day\": 0,\n        \"month\": 0,\n        \"year\": 0\n    },\n    \"governmentID\": {\n        \"ssn\": {\n            \"full\": \"example\",\n            \"lastFour\": \"example\"\n        },\n        \"itin\": {\n            \"full\": \"example\",\n            \"lastFour\": \"example\"\n        }\n    },\n    \"responsibilities\": {\n        \"jobTitle\": \"example\",\n        \"isController\": true,\n        \"isOwner\": true,\n        \"ownershipPercentage\": 0\n    },\n    \"createdOn\": \"example\",\n    \"updatedOn\": \"example\",\n    \"disabledOn\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Get representative",
+            "url": {
+              "raw": "{{baseUrl}}/api/entity/{entityId}/representative/:representativeId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "entity",
+                "{entityId}",
+                "representative",
+                ":representativeId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                },
+                {
+                  "key": "representativeId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Delete representative",
+            "url": {
+              "raw": "{{baseUrl}}/api/entity/{entityId}/representative/:representativeId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "entity",
+                "{entityId}",
+                "representative",
+                ":representativeId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "entityId",
+                  "value": ""
+                },
+                {
+                  "key": "representativeId",
+                  "value": ""
+                }
+              ]
+            },
+            "header": [],
+            "method": "DELETE"
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    }
+  ]
+}
